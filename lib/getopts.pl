@@ -5,8 +5,8 @@
 ;#                           #  side effect.
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("Getopt::Std");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "Getopt::Std");
 }
 
 use Getopt::Std ();

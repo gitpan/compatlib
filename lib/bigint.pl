@@ -4,8 +4,8 @@
 #
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("Math::BigInt");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "Math::BigInt");
 }
 
 use Math::BigInt ();

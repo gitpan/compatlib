@@ -6,8 +6,8 @@
 # you might chdir out of a directory that you can't chdir back into.
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("Cwd");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "Cwd");
 }
 
 use Cwd ();

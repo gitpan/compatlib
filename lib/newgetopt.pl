@@ -3,8 +3,8 @@
 # $Id: newgetopt.pl,v 1.17 1996-10-02 11:17:16+02 jv Exp $
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("Getopt::Long");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "Getopt::Long");
 }
 
 {   package newgetopt;

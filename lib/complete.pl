@@ -3,8 +3,8 @@
 ;#
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("Term::Complete");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "Term::Complete");
 }
 
 use Term::Complete ();

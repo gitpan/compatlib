@@ -14,8 +14,8 @@
 ;# C<require 'timelocal.pl';> was executed in a program.
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("Time::Local");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "Time::Local");
 }
 
 use Time::Local;

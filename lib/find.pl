@@ -1,7 +1,7 @@
 # Usage:
-#	require "finddepth.pl";
+#	require "find.pl";
 #
-#	&finddepth('/foo','/bar');
+#	&find('/foo','/bar');
 #
 #	sub wanted { ... }
 #		where wanted does whatever you want.  $dir contains the
@@ -9,11 +9,10 @@
 #		that directory.  $name contains "$dir/$_".  You are cd'ed
 #		to $dir when the function is called.  The function may
 #		set $prune to prune the tree.
-#
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("File::Find");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "File::Find");
 }
 
 use File::Find ();
@@ -27,8 +26,8 @@ use File::Find ();
 *topmode	= *File::Find::topmode;
 *topnlink	= *File::Find::topnlink;
 
-sub finddepth {
-    &File::Find::finddepth(\&wanted, @_);
+sub find {
+    &File::Find::find(\&wanted, @_);
 }
 
 1;

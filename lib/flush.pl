@@ -5,8 +5,8 @@
 ;# prints arguments and flushes filehandle
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("IO::File");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "IO::File");
 }
 
 use IO::File ();

@@ -7,8 +7,8 @@
 ;#
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("File::stat");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "File::stat");
 }
 
 use File::stat ();

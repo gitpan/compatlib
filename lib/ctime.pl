@@ -2,8 +2,8 @@
 ;#
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("Time::localtime");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "Time::localtime");
 }
 
 use Time::localtime ();

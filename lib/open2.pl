@@ -8,8 +8,8 @@
 #     require 'open2.pl';
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("IPC::Open2");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "IPC::Open2");
 }
 
 package main;

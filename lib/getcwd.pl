@@ -3,8 +3,8 @@
 # Usage: $cwd = &getcwd;
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("Cwd");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "Cwd");
 }
 
 use Cwd ();

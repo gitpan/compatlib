@@ -11,8 +11,8 @@
 ;#	&chdir($newdir);
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("Cwd (chdir)");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "Cwd (chdir)");
 }
 
 use Cwd qw(chdir);

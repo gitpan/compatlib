@@ -4,8 +4,8 @@
 #
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("Math::BigFloat");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "Math::BigFloat");
 }
 
 use Math::BigFloat ();

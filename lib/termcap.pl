@@ -2,8 +2,8 @@
 ;#
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("Term::Cap");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "Term::Cap");
 }
 
 use Term::Cap ();

@@ -8,8 +8,8 @@
 #     require 'open3.pl';
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("IPC::Open3");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "IPC::Open3");
 }
 
 package main;

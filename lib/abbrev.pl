@@ -6,8 +6,8 @@
 
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("Text::Abbrev");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "Text::Abbrev");
 }
 
 use Text::Abbrev ();

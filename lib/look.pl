@@ -6,8 +6,8 @@
 package main;
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("Search::Dict");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "Search::Dict");
 }
 
 use Search::Dict ();

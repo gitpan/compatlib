@@ -9,8 +9,8 @@
 package syslog;
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("Sys::Syslog");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "Sys::Syslog");
 }
 
 use Sys::Syslog ();

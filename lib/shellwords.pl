@@ -9,8 +9,8 @@
 ;#	@words = &shellwords;		# defaults to $_ (and clobbers it)
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("Text::Parsewords");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "Text::Parsewords");
 }
 
 use Text::Parsewords ();

@@ -1,8 +1,8 @@
 # Open in their package.
 
 if ($^W) {
-use DEPRECATE ();
-&Deprecate::DEPRECATE("FileCache");
+	require DEPRECATE;
+	&DEPRECATE::DEPRECATE(__FILE__, "FileCache");
 }
 
 use FileCache ();
