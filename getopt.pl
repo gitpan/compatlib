@@ -9,8 +9,10 @@
 ;# Usage:
 ;#	do Getopt('oDI');  # -o, -D & -I take arg.  Sets opt_* as a side effect.
 
-print qq/Deprecated "require 'getopt.pl'" called in $0.\n/,
-	qq/You should 'use Getopt::Std' instead; continuing...\n/ if $^W;
+if ($^W) {
+use DEPRECATE ();
+&Deprecate::DEPRECATE("Getopt::Std");
+}
 
 use Getopt::Std ();
 

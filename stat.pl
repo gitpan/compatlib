@@ -6,8 +6,10 @@
 ;#	$st_dev = @ary[$ST_DEV];
 ;#
 
-print qq/Deprecated "require 'stat.pl'" called in $0.\n/,
-	qq/You should 'use File::stat' instead; continuing...\n/ if $^W;
+if ($^W) {
+use DEPRECATE ();
+&Deprecate::DEPRECATE("File::stat");
+}
 
 use File::stat ();
 

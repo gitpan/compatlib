@@ -3,8 +3,10 @@
 # by Mark Biggar
 #
 
-warn qq/Deprecated "require 'bigint.pl'" called in $0.\n/,
-     qq/You should 'use Math::BigInt' instead; continuing...\n" if $^W;
+if ($^W) {
+use DEPRECATE ();
+&Deprecate::DEPRECATE("Math::BigInt");
+}
 
 use Math::BigInt ();
 

@@ -2,8 +2,11 @@
 #
 # by Mark Biggar
 #
-warn qq/Deprecated "require 'bigfloat.pl'" called in $0.\n/,
-     qq/You should 'use Math::BigFloat' instead; continuing...\n" if $^W;
+
+if ($^W) {
+use DEPRECATE ();
+&Deprecate::DEPRECATE("Math::BigFloat");
+}
 
 use Math::BigFloat ();
 

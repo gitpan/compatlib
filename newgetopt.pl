@@ -2,8 +2,10 @@
 # Now just a wrapper around the Getopt::Long module.
 # $Id: newgetopt.pl,v 1.17 1996-10-02 11:17:16+02 jv Exp $
 
-warn(qq/Deprecated "require 'newgetopt.pl'" called from $0.\nYou should /,
-     qq/"use Getopt::Long" instead; continuing\n/) if $^W;
+if ($^W) {
+use DEPRECATE ();
+&Deprecate::DEPRECATE("Getopt::Long");
+}
 
 {   package newgetopt;
 

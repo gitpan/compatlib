@@ -1,7 +1,10 @@
 ;# $RCSfile: termcap.pl,v $$Revision: 4.1 $$Date: 92/08/07 18:24:16 $
 ;#
-warn(qq/Deprecated "require 'termcap.pl'" called from $0.\nYou should /,
-     qq/'use Term::Cap' instead; continuing\n/) if $^W;
+
+if ($^W) {
+use DEPRECATE ();
+&Deprecate::DEPRECATE("Term::Cap");
+}
 
 use Term::Cap ();
 

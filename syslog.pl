@@ -8,8 +8,10 @@
 
 package syslog;
 
-warn(qq/Deprecated "require 'syslog.pl'" called from $0.\nYou should /,
-     qq/'use Sys::Syslog' instead; continuing\n/) if $^W;
+if ($^W) {
+use DEPRECATE ();
+&Deprecate::DEPRECATE("Sys::Syslog");
+}
 
 use Sys::Syslog ();
 

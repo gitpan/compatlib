@@ -10,8 +10,10 @@
 ;#	...
 ;#	&chdir($newdir);
 
-print qq/Deprecated "require 'pwd.pl'" called in $0\n/,
-	qq/You should 'use Cwd (chdir)' instead; continuing...\n/ if $^W;
+if ($^W) {
+use DEPRECATE ();
+&Deprecate::DEPRECATE("Cwd (chdir)");
+}
 
 use Cwd qw(chdir);
 *chdir = *Cwd::chdir;

@@ -4,8 +4,10 @@
 ;#      do Getopts('a:bc');  # -a takes arg. -b & -c not. Sets opt_* as a
 ;#                           #  side effect.
 
-print qq/Deprecated "require 'getopts.pl'" called in $0.\n/,
-	qq/You should 'use Getopt::Std' instead; continuing...\n/ if $^W;
+if ($^W) {
+use DEPRECATE ();
+&Deprecate::DEPRECATE("Getopt::Std");
+}
 
 use Getopt::Std ();
 

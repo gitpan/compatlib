@@ -4,8 +4,11 @@
 ;#	...
 ;#	$long = $foo{$short};
 
-warn(qq/Deprecated "require 'abbrev.pl'" called from $0.\nYou should /,
-     qq/'use Text::Abbrev' instead; continuing\n/) if $^W;
+
+if ($^W) {
+use DEPRECATE ();
+&Deprecate::DEPRECATE("Text::Abbrev");
+}
 
 use Text::Abbrev ();
 

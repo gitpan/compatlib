@@ -4,8 +4,10 @@
 ;# Usage: &printflush(FILEHANDLE, "prompt: ")
 ;# prints arguments and flushes filehandle
 
-warn(qq/Deprecated "require 'flush.pl'" called from $0.\nYou should /,
-     qq/'use IO::File' instead; continuing\n/) if $^W;
+if ($^W) {
+use DEPRECATE ();
+&Deprecate::DEPRECATE("IO::File");
+}
 
 use IO::File ();
 
